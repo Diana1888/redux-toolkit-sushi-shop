@@ -10,7 +10,7 @@ const CartItem = ({ cartItem }) => {
   console.log(cartItem);
   return (
     <div className="cart-item">
-      <img src={`./${cartItem.img}.jpeg`} className="cart-img" />
+      <img src={`./${cartItem.img}.jpeg`} className="cart-img" alt="plate-cart"/>
       <div className="item-text">
         <p>
           {plates.name} <span>{cartItem.quantity} portion(s)</span>
@@ -25,7 +25,7 @@ const CartItem = ({ cartItem }) => {
         <img
           className="deleteIcon"
           src="https://img.icons8.com/ios-glyphs/30/null/delete.png"
-        />
+        alt="delete-icon"/>
       </span>
     </div>
   );
