@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterCategory, getSelectedCategory } from "../../Redux/platesSlice";
 
-const Filter = ({ category }) => {
+const Filter = ({ category}) => {
   const selectedCategory = useSelector(getSelectedCategory);
   const dispatch = useDispatch();
 
   return (
-    <div className="category">
+    <div className="category" >
       <p
         onClick={() => {
           dispatch(filterCategory(category));

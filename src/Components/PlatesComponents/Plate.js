@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../Redux/cartSlice";
 import ChangeQuantity from "../Cart/ChangeQuantity";
 
-const Plate = ({ plate }) => {
+const Plate = ({ plate}) => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 

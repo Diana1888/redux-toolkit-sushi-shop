@@ -38,7 +38,9 @@ const Cart = () => {
       <h3>SHOPPING CART</h3>
       <div className="cart-list">
         {cartItems.map((cartItem) => (
-          <CartItem cartItem={cartItem} />
+         
+          <CartItem cartItem={cartItem} key={cartItem.id}/>
+
         ))}
       </div>
       <div className="cart-foot">

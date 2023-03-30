@@ -3,11 +3,12 @@ import dataSushi from "./../../Data/dataSushi";
 import { removeItemFromCart } from "../../Redux/cartSlice";
 
 const CartItem = ({ cartItem }) => {
-  console.log(cartItem);
+
 
   const plates = dataSushi.find((item) => item.id === cartItem.plateId);
   const dispatch = useDispatch();
   console.log(cartItem);
+  
   return (
     <div className="cart-item">
       <img src={`./${cartItem.img}.jpeg`} className="cart-img" alt="plate-cart"/>

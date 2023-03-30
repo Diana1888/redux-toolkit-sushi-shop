@@ -7,14 +7,15 @@ const Plates = () => {
   const selectedCategory = useSelector(getSelectedCategory);
 
   return (
-    <div className="plates">
+    <div className="plates" >
       {dataSushi
         .filter((plate) => {
           if (selectedCategory === "ALL") return true;
           return selectedCategory === plate.category;
         })
         .map((plate) => (
-          <Plate plate={plate} />
+
+          <Plate plate={plate} key={plate.id}/>
         ))}
     </div>
   );

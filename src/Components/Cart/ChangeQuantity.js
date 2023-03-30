@@ -9,6 +9,7 @@ const ChangeQuantity = ({ quantity, setQuantity }) => {
     const newQuantity = quantity - 1;
     setQuantity(newQuantity);
   };
+  
   return (
     <div>
       <button className="btn-quantity" onClick={addQuantity}>
