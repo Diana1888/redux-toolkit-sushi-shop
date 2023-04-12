@@ -10,9 +10,8 @@ const AllCategories = () => {
         "VEGETERIAN ROLLS",
         "COMBO",
         "NOODLES",
-      ].map((category, index) => (
-
-        <Filter category={category} key={index} />
+      ].map((category, id) => (
+        <Filter category={category} key={id} />
       ))}
     </div>
   );

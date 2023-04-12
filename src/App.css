@@ -119,13 +119,6 @@ padding: 20px;
 .total{
   padding: 0px 20px;
 }
-.close{
-  display: none;
-}
-.open {
-  display: block;
-  
-}
 .amount-container {
   position: absolute;
   top: -0.6rem;
@@ -146,6 +139,11 @@ padding: 20px;
 .toggle-btn{
   background:transparent;
   border: none;
+}
+
+.toggle-btn:hover{
+  filter: opacity(0.7);
+  cursor: pointer;
 }
 
 

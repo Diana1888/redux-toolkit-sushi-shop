@@ -1,10 +1,16 @@
 import { CartIcon } from "./Icons/icons";
-import { useSelector } from "react-redux";
-import { getTotalQuantity } from "./Redux/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getTotalQuantity, toggle } from "./Redux/cartSlice";
 import { useState } from "react";
 import imgSushi from "./Icons/sushi-icon.png";
 
-const Navbar = ({ toggleCart }) => {
+const Navbar = () => {
+
+  const totalQuantity = useSelector(getTotalQuantity);
+  const dispatch = useDispatch();
+
+
+
   const [color, setColor] = useState(false);
 
   const changeColor = () => {
@@ -15,7 +21,7 @@ const Navbar = ({ toggleCart }) => {
 
   window.addEventListener("scroll", changeColor);
 
-  const totalQuantity = useSelector(getTotalQuantity);
+  
 
   return (
     <div>
@@ -26,7 +32,8 @@ const Navbar = ({ toggleCart }) => {
             <h1>Sushi Shop</h1>
             <div className="nav-container">
               <div className="toggle-btn">
-                <button className="toggle-btn" onClick={toggleCart}>
+                <button className="toggle-btn" onClick={() => 
+                {dispatch(toggle())}}>
                   <CartIcon />
                 </button>
                 <div className="amount-container">

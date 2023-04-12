@@ -3,15 +3,17 @@ import dataSushi from "./../../Data/dataSushi";
 import { removeItemFromCart } from "../../Redux/cartSlice";
 
 const CartItem = ({ cartItem }) => {
-
-
   const plates = dataSushi.find((item) => item.id === cartItem.plateId);
   const dispatch = useDispatch();
   console.log(cartItem);
-  
+
   return (
     <div className="cart-item">
-      <img src={`./${cartItem.img}.jpeg`} className="cart-img" alt="plate-cart"/>
+      <img
+        src={`./${cartItem.img}.jpeg`}
+        className="cart-img"
+        alt="plate-cart"
+      />
       <div className="item-text">
         <p>
           {plates.name} <span>{cartItem.quantity} portion(s)</span>
@@ -26,7 +28,8 @@ const CartItem = ({ cartItem }) => {
         <img
           className="deleteIcon"
           src="https://img.icons8.com/ios-glyphs/30/null/delete.png"
-        alt="delete-icon"/>
+          alt="delete-icon"
+        />
       </span>
     </div>
   );

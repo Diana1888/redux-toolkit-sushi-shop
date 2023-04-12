@@ -10,7 +10,7 @@ const Cart = () => {
 
   if (totalQuantity < 1) {
     return (
-      <div>
+      <div className="cartBlock">
         <h3>SHOPPING CART</h3>
         <div className="cart-item">
           <h3>Cart is empty</h3>
@@ -23,8 +23,7 @@ const Cart = () => {
           <div>
             <button
               className="btn-add"
-              onClick={() => alert("THIS IS UNDER CONSTRUCTION!")}
-            >
+              onClick={() => alert("THIS IS UNDER CONSTRUCTION!")}>
               Checkout
             </button>
           </div>
@@ -34,13 +33,11 @@ const Cart = () => {
   }
 
   return (
-    <div>
+    <div className="cartBlock">
       <h3>SHOPPING CART</h3>
       <div className="cart-list">
         {cartItems.map((cartItem) => (
-         
-          <CartItem cartItem={cartItem} key={cartItem.id}/>
-
+          <CartItem cartItem={cartItem} key={cartItem.id} />
         ))}
       </div>
       <div className="cart-foot">

@@ -2,30 +2,22 @@ import "./App.css";
 import Cart from "./Components/Cart/Cart";
 import AllCategories from "./Components/Filter/AllCategories";
 import Plates from "./Components/PlatesComponents/Plates";
-import { useState } from "react";
 import Navbar from "./Navbar";
+import { useSelector } from "react-redux";
+import { toggleCart } from "./Redux/cartSlice";
 
 function App() {
-  const [isActive, setActive] = useState(false);
-
-  const toggleCart = () => {
-    setActive(!isActive);
-  };
+  const showCart = useSelector(toggleCart);
 
   return (
     <div>
-      <Navbar toggleCart={toggleCart} />
-
+      <Navbar />
       <div className="app">
         <div className="block">
           <AllCategories />
           <Plates />
         </div>
-        <div className="block">
-          <div className={isActive ? "cartBlock open" : "cartBlock close"}>
-            <Cart />
-          </div>
-        </div>
+        {showCart && <Cart />}
       </div>
     </div>
   );
